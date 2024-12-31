@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^login$ pages/login.php [L]
+RewriteRule ^signup$ pages/signup.php [L]
+RewriteRule ^books$ pages/books.php [L]
+RewriteRule  ^browse$ pages/book_browse.php [L]
