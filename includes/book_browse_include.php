@@ -1,14 +1,14 @@
-
-
 <?php include "../logic/browse.php" ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browse Books - Library</title>
-<link rel="stylesheet" href="../css/book_browse.css">
+    <link rel="stylesheet" href="../css/book_browse.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Category Sidebar -->
@@ -22,10 +22,10 @@
 
 
                 <li class="category-item active">All Books</li>
-                
+
                 <?php foreach ($categories as $category): ?>
-               <li class="category-item" ><?php echo htmlspecialchars($category['category_name']); ?></li>
-    <?php endforeach; ?>
+                    <li class="category-item"><?php echo htmlspecialchars($category['category_name']); ?></li>
+                <?php endforeach; ?>
 
 
 
@@ -88,4 +88,5 @@
         </main>
     </div>
 </body>
+
 </html>
