@@ -1,5 +1,5 @@
 <?php
-$imgFileLocation = __DIR__ . "/img";
+$imgFileLocation = __DIR__ . "\img";
 
 
 

@@ -1,4 +1,6 @@
-<?php include "../logic/browse.php" ?>
+<?php include_once "../logic/browse.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,10 +23,20 @@
             <ul class="category-list">
 
 
-                <li class="category-item active">All Books</li>
+
+                <a href="browse">
+                    <li class="<?php echo $selectedCategory == null ? 'category-item active' : 'category-item' ?>">All
+                        Books
+                    </li>
+                </a>
+
 
                 <?php foreach ($categories as $category): ?>
-                    <li class="category-item"><?php echo htmlspecialchars($category['category_name']); ?></li>
+                    <a href="browse?category_id=<?php echo htmlspecialchars($category['ID']); ?>">
+                        <li class="category-item <?php echo $selectedCategory == $category['ID'] ? 'active' : ''; ?>">
+                            <?php echo htmlspecialchars($category['category_name']); ?>
+                        </li>
+                    </a>
                 <?php endforeach; ?>
 
 
@@ -36,54 +48,31 @@
         <main class="main-content">
             <div class="content-header">
                 <h1>Browse Books</h1>
-                <p>Showing all available books in our library</p>
             </div>
 
             <div class="book-grid">
+
                 <!-- Sample Book Cards -->
-                <div class="book-card" onclick="window.location.href='book_details.php?id=1'">
-                    <div class="book-image">
-                        <img src="/api/placeholder/200/280" alt="Book Cover">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">The Great Gatsby</h3>
-                        <p class="book-author">F. Scott Fitzgerald</p>
-                        <p class="book-status status-available">Available</p>
-                    </div>
-                </div>
+                <?php if ($allBooks == null) {
+                    echo "No available Books In this Category";
+                } ?>
+                <?php foreach ($allBooks as $allBook): ?>
 
-                <div class="book-card" onclick="window.location.href='book_details.php?id=2'">
-                    <div class="book-image">
-                        <img src="/api/placeholder/200/280" alt="Book Cover">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">1984</h3>
-                        <p class="book-author">George Orwell</p>
-                        <p class="book-status">Checked Out</p>
-                    </div>
-                </div>
 
-                <div class="book-card" onclick="window.location.href='book_details.php?id=3'">
-                    <div class="book-image">
-                        <img src="/api/placeholder/200/280" alt="Book Cover">
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="../img/<?php echo htmlspecialchars($allBook["img_url"]); ?>" alt="Book Cover">
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title"><?php echo $allBook["book_name"]; ?></h3>
+                            <p class="book-author"><?php echo $allBook["author_name"]; ?></p>
+                            <p class="book-status status-available">Available</p>
+                        </div>
                     </div>
-                    <div class="book-info">
-                        <h3 class="book-title">Pride and Prejudice</h3>
-                        <p class="book-author">Jane Austen</p>
-                        <p class="book-status status-available">Available</p>
-                    </div>
-                </div>
 
-                <div class="book-card" onclick="window.location.href='book_details.php?id=4'">
-                    <div class="book-image">
-                        <img src="/api/placeholder/200/280" alt="Book Cover">
-                    </div>
-                    <div class="book-info">
-                        <h3 class="book-title">To Kill a Mockingbird</h3>
-                        <p class="book-author">Harper Lee</p>
-                        <p class="book-status status-available">Available</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
+
+
             </div>
         </main>
     </div>

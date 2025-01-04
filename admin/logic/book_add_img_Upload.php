@@ -57,11 +57,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 //  echo "The file " . htmlspecialchars(basename($_FILES["cover"]["name"])) . " has been uploaded.";
 
                 // تخزين مسار الصورة في قاعدة البيانات
-                $coverName = $bookTitle . "" . basename($_FILES["cover"]["name"]);
+                $coverName = $bookTitle . DIRECTORY_SEPARATOR . basename(path: $_FILES["cover"]["name"]);
                 try {
                     $stmt = $pdo->prepare("INSERT INTO book_img (img_url, book_ID) VALUES (:cover_name, :book_ID)");
                     $stmt->bindParam(":cover_name", $coverName, PDO::PARAM_STR);
                     $stmt->bindParam(":book_ID", $bookId, PDO::PARAM_INT);
+                    $stmt->execute();
+
                     $successMessage = "Book added successfully!";
                 } catch (PDOException $e) {
                     echo "Error: " . $e->getMessage();
