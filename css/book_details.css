@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+/* Book Details Section */
+.book-details {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.book-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.book-cover {
+    width: 300px;
+    height: 400px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #e1e1e1;
+}
+
+.book-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.book-author {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.book-availability {
+    background-color: #f0f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+}
+
+.availability-status {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.books-count {
+    color: #666;
+}
+
+.status-available {
+    color: #2ecc71;
+    font-weight: 500;
+}
+
+.status-unavailable {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.book-description {
+    line-height: 1.6;
+    color: #444;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.borrow-button {
+    background-color: #0097b2;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 2rem auto;
+}
+
+.borrow-button:hover {
+    background-color: #007a8c;
+}
+
+/* Comments Section */
+.comments-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comments-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.comment-form {
+    margin-bottom: 2rem;
+}
+
+.comment-input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-comment {
+    background-color: #0097b2;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-comment:hover {
+    background-color: #007a8c;
+}
+
+.comments-list {
+    list-style: none;
+}
+
+.comment {
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-author {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.comment-content {
+    color: #444;
+    line-height: 1.5;
+}

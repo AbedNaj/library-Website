@@ -1,3 +1,4 @@
+
 <!DOCTYPE html >
 <html>
 <head>
@@ -10,6 +11,7 @@
     <section class="welcome">
 <h1>BOOKCOM</h1>
 <h2>your library is ready for you<h2>
+
 </section>
 
 <section class="btn-section">

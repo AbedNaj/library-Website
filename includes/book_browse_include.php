@@ -1,4 +1,6 @@
-<?php include_once "../logic/browse.php";
+<?php
+include_once "../logic/browse.php";
+
 
 ?>
 <!DOCTYPE html>
@@ -59,7 +61,8 @@
                 <?php foreach ($allBooks as $allBook): ?>
 
 
-                    <div class="book-card">
+                    <div class="book-card"
+                        onclick="location.href='book-details?book_id=<?php echo htmlspecialchars($allBook["ID"]) ?>'">
                         <div class="book-image">
                             <img src="../img/<?php echo htmlspecialchars($allBook["img_url"]); ?>" alt="Book Cover">
                         </div>
@@ -73,7 +76,7 @@
                 <?php endforeach; ?>
 
 
-            </div>
+
         </main>
     </div>
 </body>

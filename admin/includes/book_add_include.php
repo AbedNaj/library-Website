@@ -28,6 +28,8 @@ include_once "../logic/book_add_img_Upload.php";
 </head>
 
 <body>
+
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">

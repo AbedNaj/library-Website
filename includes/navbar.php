@@ -1,3 +1,16 @@
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+
+}
+$isLoged = false;
+if (isset($_SESSION["user_id"] )) {
+    $isLoged = true;
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +25,13 @@
         <div class="nav-links">
             <a href="browse" class="browse">Browse</a>
             <a href="admin" class="login">Sign Up</a>
-            <a href="login" class="signup">Login</a>
+        
+            <?php if( $isLoged == true) :    ?>
+                <a href="/" class="signup" onclick="<?php  session_unset();session_destroy();?>">Logout</a>
+          
+             <?php else : ?>
+                <a href="login" class="signup">Login</a>
+            <?php endif; ?>
         </div>
     </nav>
 </body>
