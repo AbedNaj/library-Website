@@ -26,6 +26,7 @@
                     </li>
                     <li class="nav-item">User Management</li>
                     <li class="nav-item">Loans & Returns</li>
+                    <li class="nav-item">borrow requests</li>
                     <li class="nav-item">Categories</li>
                     <li class="nav-item">Reports</li>
                     <li class="nav-item">Settings</li>
@@ -37,7 +38,7 @@
         <main class="main-content">
             <div class="header">
                 <h1 class="page-title">Dashboard</h1>
-                <a href="book_add"><button class="action-button">Add New Book</button></a>
+                <a href="addBook"><button class="action-button">Add New Book</button></a>
             </div>
 
             <!-- Stats Grid -->

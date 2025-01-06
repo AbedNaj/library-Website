@@ -39,7 +39,10 @@ include_once("../logic/book_details.php");
                 </p>
             </div>
 
-            <button class="borrow-button">Borrow Book</button>
+            <form action="borrow" method="GET">
+            <input type="hidden" name="book_id" value= <?php echo $book["ID"]?>>
+    <button type="submit" class="borrow-button">Borrow Book</button>
+</form>
         </div>
 
         <!-- Comments Section -->

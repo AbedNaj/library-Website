@@ -26,8 +26,8 @@ if (isset($_SESSION["user_id"] )) {
             <a href="browse" class="browse">Browse</a>
             <a href="admin" class="login">Sign Up</a>
         
-            <?php if( $isLoged == true) :    ?>
-                <a href="/" class="signup" onclick="<?php  session_unset();session_destroy();?>">Logout</a>
+            <?php if( $isLoged === true) :    ?>
+                <a href="logout" class="signup">Logout</a>
           
              <?php else : ?>
                 <a href="login" class="signup">Login</a>
