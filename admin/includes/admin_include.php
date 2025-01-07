@@ -26,7 +26,7 @@
                     </li>
                     <li class="nav-item">User Management</li>
                     <li class="nav-item">Loans & Returns</li>
-                    <li class="nav-item">borrow requests</li>
+                    <a href="borrow-requests"><li class="nav-item">borrow requests</li></a>
                     <li class="nav-item">Categories</li>
                     <li class="nav-item">Reports</li>
                     <li class="nav-item">Settings</li>
