@@ -41,12 +41,9 @@ include("../logic/borrow_request_statistics.php");
             <div class="header">
                 <h1 class="page-title">Borrow Requests</h1>
                 <div class="header-actions">
-                    <select class="filter-select">
-                        <option value="all">All Requests</option>
-                        <option value="pending">Pending</option>
-                        <option value="approved">Approved</option>
-                        <option value="rejected">Rejected</option>
-                    </select>
+
+
+                    
                 </div>
             </div>
 
@@ -122,11 +119,11 @@ include("../logic/borrow_request_statistics.php");
                                   </form>
                  <?php elseif  ($request["rent_state"] == "Approved")  : ?>   
                  
-                    <button class="action-button view">View Details</button>
+                    <button class="action-button view" onclick="location.href='borrow-details?request=<?php echo htmlspecialchars($request["ID"]);?>'">View Details</button>
               <?php else :  ?>
 
                 
-                <button class="action-button view">View Details</button>
+                <button class="action-button view" onclick="location.href='borrow-details?request=<?php echo htmlspecialchars($request["ID"]);?>'">View Details</button>
 
                 <?php endif; ?>
                                 

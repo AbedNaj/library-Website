@@ -3,3 +3,4 @@ RewriteBase /admin
 
 RewriteRule ^addBook$ pages/book_add.php [L]
 RewriteRule ^borrow-requests$ pages/borrow_request.php [L]
+RewriteRule ^borrow-details$ pages/borrow_details.php [L]
