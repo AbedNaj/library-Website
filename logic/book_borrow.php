@@ -1,5 +1,9 @@
 <?php 
 include_once "../includes/db_connect.php";
+if ($_GET["IsAvaiable"] == false) {
+  exit("this book is not available now");
+}
+
 
 if ($_SERVER ["REQUEST_METHOD"] === 'POST') {
     if(!empty($_POST["duration"])){
@@ -35,6 +39,7 @@ echo"something went wrong...";
     }else{
       echo "please enter the duration";
     }
+
 
 
 

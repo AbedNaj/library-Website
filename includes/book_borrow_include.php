@@ -26,7 +26,8 @@ include_once("../logic/book_borrow.php");
             <div class="book-info">
                 <h2 class="book-title"><?php echo $book["book_name"] ?></h2>
                 <p class="book-author"><?php echo $book["author_name"] ?></p>
-                <p class="book-availability">Available (3 copies left)</p>
+                <p class="book-availability"><?php echo htmlspecialchars($bookStatuses["book state"])?> 
+                (<?php echo htmlspecialchars($bookStatuses["available books"] - $bookStatuses["borrowed books"])  ?> copies left)</p>
             </div>
 
             <div class="form-group">

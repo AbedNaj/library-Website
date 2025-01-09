@@ -1,5 +1,6 @@
 <?php
 include_once("../includes/db_connect.php");
+include_once("book_available_check.php");
 
 $bookID = htmlspecialchars($_GET["book_id"]);
 
@@ -30,6 +31,20 @@ ON
         $stmt -> execute(); 
 
         $book = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+        $bookStatuses = bookAvaiableCheck($pdo,$bookID);
+
+        
+  $IsAvailable;
+
+  if($bookStatuses["book state"] == 'Available')
+    $IsAvailable = true; else 
+    $IsAvailable = false;
+   
+
+  
+     
     } catch (PDOException $e) {
 
         echo"something went wrong" . $e->getMessage();

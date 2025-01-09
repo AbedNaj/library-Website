@@ -16,7 +16,6 @@ include_once("../logic/book_details.php");
 <body>
     <div class="container">
 
-
         <!-- Book Details -->
         <div class="book-details">
             <div class="book-header">
@@ -28,8 +27,9 @@ include_once("../logic/book_details.php");
             </div>
 
             <div class="book-availability">
-                <p class="availability-status">Status: <span class="status-available">Available</span></p>
-                <p class="books-count">3 copies available out of 5 total copies</p>
+                <p class="availability-status">Status: <span class="status-<?php echo $bookStatuses["book state"] == "Available" ? "available" : "unavailable" ?>"><?php echo htmlspecialchars($bookStatuses["book state"]) ?></span></p>
+                <p class="books-count">      <?php echo htmlspecialchars($bookStatuses["available books"] - $bookStatuses["borrowed books"]) ?> copies available out of
+           <?php echo htmlspecialchars($bookStatuses["available books"]) ?> total copies</p>
             </div>
 
             <div class="book-description">
@@ -39,9 +39,10 @@ include_once("../logic/book_details.php");
                 </p>
             </div>
 
-            <form action="borrow" method="GET">
+            <form action="borrow" method="GET" name="borrow">    
             <input type="hidden" name="book_id" value= <?php echo $book["ID"]?>>
-    <button type="submit" class="borrow-button">Borrow Book</button>
+            <input type="hidden" name="IsAvaiable" value= <?php echo $IsAvailable?>>
+         <button type="submit" class="borrow-button">Borrow Book</button>
 </form>
         </div>
 
