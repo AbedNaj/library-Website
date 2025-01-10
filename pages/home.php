@@ -8,6 +8,8 @@
     <title></title>
 </head>
 <body>
+<?php include 'includes/header.php'; ?>
+
     <section class="welcome">
 <h1>BOOKCOM</h1>
 <h2>your library is ready for you<h2>
