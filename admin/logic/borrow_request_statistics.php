@@ -1,7 +1,8 @@
 <?php 
 
 try {
-include_once("../includes/db_connect.php");
+require_once("../includes/init.php");
+require_once("../includes/db_connect.php");
 
 $stmtNewRequests = $pdo->prepare("SELECT COUNT(ID)
 FROM rent

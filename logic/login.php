@@ -1,6 +1,7 @@
 <?php
 // ملف الاتصال بقاعدة البيانات
-require_once '../includes/db_connect.php';
+require_once __DIR__ . '/../includes/init.php';
+require_once __DIR__ . '/../includes/db_connect.php';
 
 // التحقق من طريقة الطلب (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

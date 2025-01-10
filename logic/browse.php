@@ -1,5 +1,6 @@
 <?php
-require_once '../includes/db_connect.php';
+require_once __DIR__ . '/../includes/init.php';
+require_once __DIR__ . '/../includes/db_connect.php';
 
 
 require_once 'browse_functions.php';

@@ -1,5 +1,7 @@
 <?php
-include_once("../includes/db_connect.php");
+require_once("../includes/init.php");
+require_once("../includes/db_connect.php");
+
 
 try {
     $stmtAuth = $pdo->prepare("SELECT * FROM authors");

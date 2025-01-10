@@ -1,5 +1,6 @@
 <?php
-include_once("../includes/db_connect.php");
+require_once __DIR__ . '/../includes/init.php';
+require_once __DIR__ . '/../includes/db_connect.php';
 include_once("book_available_check.php");
 
 $bookID = htmlspecialchars($_GET["book_id"]);

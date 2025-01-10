@@ -1,5 +1,6 @@
 <?php 
-include_once "../includes/db_connect.php";
+require_once __DIR__ . '/../includes/init.php';
+require_once __DIR__ . '/../includes/db_connect.php';
 if ($_GET["IsAvaiable"] == false) {
   exit("this book is not available now");
 }
@@ -31,8 +32,9 @@ echo"your request has been sent successfully";
 
         }
         catch(PDOException $e){
+          error_log($e->getMessage());
             
-echo"something went wrong...";
+echo"something went wrong... . " . $e->getMessage();
     }
 
 
