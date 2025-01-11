@@ -14,6 +14,7 @@ include_once("../logic/book_borrow.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrow Request</title>
     <link rel="stylesheet" href="../css/book_borrow.css">
+
 </head>
 <body>
     <div class="container">
@@ -49,7 +50,9 @@ include_once("../logic/book_borrow.php");
                     <li>Lost or damaged books must be replaced or paid for</li>
                 </ul>
             </div>
-
+            <?php if (!empty($message)): ?>
+        <div class="alert alert-error"><?php echo "Warning : ". $message; ?></div>
+    <?php endif; ?>
             <div class="checkbox-group">
                 <label class="checkbox-label">
                     <input type="checkbox" id="termsCheckbox" required>
@@ -57,10 +60,18 @@ include_once("../logic/book_borrow.php");
                 </label>
             </div>
 
-            <button type="submit" class="confirm-button" id="confirmButton">
-                Confirm Borrow Request
-            </button>
+            <div class="button-group">
+    <button type="submit" class="confirm-button" id="confirmButton">
+        Confirm Borrow Request
+    </button>
+    <button type="button" class="cancel-button" onclick="window.location.href = 'browse'">
+        Cancel Borrow Request
+    </button>
+</div>
+
+
         </form>
+
     </div>
 
    
