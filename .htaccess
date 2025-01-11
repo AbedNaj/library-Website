@@ -7,5 +7,6 @@ RewriteRule  ^browse$ pages/book_browse.php [L]
 RewriteRule  ^book-details$ pages/book_details.php [L]
 RewriteRule  ^borrow$ pages/book_borrow.php [L]
 RewriteRule ^logout$ pages/logout.php [L]
+RewriteRule ^borrowedBooks$ pages/borrowed_books.php [L]
 RewriteRule  ^admin$ admin/index.php [L]
 

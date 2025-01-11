@@ -24,14 +24,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->bindParam(':passwords', $hashed_password, PDO::PARAM_STR);
         if ($stmt->execute()) {
-            echo "تم إنشاء الحساب بنجاح";
+            echo "account created successfully";
         } else {
-            echo "حدث خطأ ما.";
+            echo "Something went wrong. Please try again.";
         }
 
     } catch (PDOException $e) {
-        error_log("Database error: " . $e->getMessage());
-        die("حدث خطأ في الخادم.");
+        if ($e->getCode() == 23000) { // 23000 is the SQLSTATE code for integrity constraint violation
+            echo "this email is already used";
+        } else {
+            // Log the error and show a generic message
+            error_log("Database error: " . $e->getMessage());
+            die("Something went wrong. Please try again.");
+        }
+
     }
 
 }

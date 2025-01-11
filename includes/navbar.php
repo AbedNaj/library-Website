@@ -56,7 +56,7 @@ if (isset($_SESSION["user_id"] )&& isset($_SESSION["user_email"])) {
     <button class="dropdown-button" onclick="toggleDropdown()">
                 
         <div class="user-info">
-            <div class="user-name"></div>
+            <div class="user-name"><?php echo htmlspecialchars($userName) ?></div>
             <div class="user-email"><?php echo htmlspecialchars($userEmail) ?></div>
         </div>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -77,7 +77,7 @@ if (isset($_SESSION["user_id"] )&& isset($_SESSION["user_email"])) {
                 </a>
             </li>
             <li>
-                <a href="borrowed-books.php" class="menu-item">
+                <a href="borrowedBooks" class="menu-item">
                     <i class="fas fa-book"></i>
                     My Borrowed Books
                 </a>
