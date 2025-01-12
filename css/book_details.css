@@ -161,6 +161,7 @@ body {
 .comment {
     border-bottom: 1px solid #eee;
     padding: 1rem 0;
+    position: relative;
 }
 
 .comment:last-child {
@@ -182,4 +183,34 @@ body {
 .comment-content {
     color: #444;
     line-height: 1.5;
+}
+
+.comment-delete {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    color: #666;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.comment-delete:hover {
+    color: #ff4444;
+}
+
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+
+
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }

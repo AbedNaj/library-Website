@@ -1,12 +1,22 @@
 <?php 
 require_once __DIR__ . '/../includes/init.php';
 require_once __DIR__ . '/../includes/db_connect.php';
+include_once("book_available_check.php");
 require_once  'book_borrow_check.php';
+include_once 'book_fetch_details.php';
 if ($_GET["IsAvaiable"] == false) {
   exit("this book is not available now");
 }
 
+$book_id = filter_var($_GET["book_id"], FILTER_SANITIZE_NUMBER_INT);
 
+$book = fetchBookDetails($pdo , $book_id);
+
+$bookStatuses = bookAvaiableCheck($pdo,$book_id);
+
+
+ 
+// insert the book to the rent table
 if ($_SERVER ["REQUEST_METHOD"] === 'POST') {
     if(!empty($_POST["duration"])){
 

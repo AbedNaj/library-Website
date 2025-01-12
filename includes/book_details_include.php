@@ -11,6 +11,7 @@ include_once("../logic/book_details.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Details</title>
     <link rel="stylesheet" href="../css/book_details.css">
+    <script src="https://kit.fontawesome.com/200d3f2624.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -47,29 +48,49 @@ include_once("../logic/book_details.php");
         </div>
 
         <!-- Comments Section -->
-        <div class="comments-section">
-            <h2 class="comments-title">Comments</h2>
+        <div class="comments-section" id="comments-section">
+            <h2 class="comments-title">Comments <?php echo htmlspecialchars($commentsCount)?></h2>
 
             <!-- Comment Form -->
-            <form class="comment-form">
-                <textarea class="comment-input" placeholder="Leave a comment..."></textarea>
+            <form class="comment-form" method="POST">
+                <textarea class="comment-input" name="comment" required="true" placeholder="Leave a comment..."></textarea>
                 <button type="submit" class="submit-comment">Submit Comment</button>
-            </form>
+             </form>
+<?php if(!empty($commentMessage)) :?>
+
+<p class="alert alert-error"> <?php echo "(". htmlspecialchars($commentMessage) .')'?> </p>
+<?php endif;?>  
+
+<?php if (!empty($_SESSION['commentDeleted'])) {
+    echo '<p class="alert alert-error">' . htmlspecialchars($_SESSION['commentDeleted']) . '</p>';
+    unset($_SESSION['commentDeleted']);
+}?>
+
+
+
+
+<?php foreach($comments as $comment) : ?>
 
             <!-- Comments List -->
             <ul class="comments-list">
                 <li class="comment">
-                    <p class="comment-author">John Doe</p>
-                    <p class="comment-date">January 3, 2025</p>
-                    <p class="comment-content">This is a fantastic book! I really enjoyed the detailed character
-                        development and the vivid descriptions of the 1920s era.</p>
+                   <?php if(isset($_SESSION["user_id"]) && $_SESSION["user_id"] == $comment["user_ID"]) :?>
+        <form method="POST">
+        <input type="hidden" name="comment_id" value="<?php echo htmlspecialchars( $comment["commentID"])?>">
+                  <button action="delete" class="comment-delete-button">
+
+                <i class="fa-regular fa-trash-can comment-delete"></i>
+                </button>
+                </form>
+                <?php endif;?>
+                    <p class="comment-author"><?php echo htmlspecialchars($comment["user_name"]) ?></p>
+                    <p class="comment-date"><?php echo htmlspecialchars($comment["comment_date"]) ?></p>
+                    <p class="comment-content"><?php echo htmlspecialchars($comment["comment"]) ?></p>
+             
                 </li>
-                <li class="comment">
-                    <p class="comment-author">Jane Smith</p>
-                    <p class="comment-date">January 2, 2025</p>
-                    <p class="comment-content">One of the classics that truly deserves its status. The symbolism
-                        throughout the book is remarkable.</p>
-                </li>
+
+                <?php endforeach  ?>
+     
             </ul>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <?php
-include_once("../logic/book_details.php");
+
 
 include_once("../logic/book_borrow.php");
 
