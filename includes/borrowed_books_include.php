@@ -75,15 +75,17 @@ include_once "../constants.php";
                     "><?php echo htmlspecialchars($borrow["rent_state"])?></span>
                     <div class="return-info">
 
-                    <?php if ($borrow["days_remaining"] < 0 ) :  ?>
+                    <?php if ($borrow["days_remaining"] < 0 && $borrow["return_date"] == null) :  ?>
 
                           <div class="days-left danger"><?php echo htmlspecialchars(abs($borrow["days_remaining"])) ?> days overdue</div>
                         <div class="fees">
                             <p class="fees-label">Late Fees:</p>
                             <p class="fees-amount"><?php echo htmlspecialchars(abs($borrow["days_remaining"])*0.5)?>$ ($0.50 per day)</p>
                         </div>
-                        <?php elseif($borrow["days_remaining"] > 0 ) : ?>
+                        <?php elseif($borrow["days_remaining"] > 0 && $borrow["return_date"] == null) : ?>
                             <div class="days-left good"><?php echo htmlspecialchars($borrow["days_remaining"]) ?> days left to return</div>
+                        <?php elseif($borrow["return_date"] != null) : ?>
+                            <div class="days-left good">Returned on <?php echo htmlspecialchars($borrow["return_date"]) ?></div>
                   <?php endif;?>
                 
                     </div>

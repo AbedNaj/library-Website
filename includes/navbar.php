@@ -71,7 +71,7 @@ if (isset($_SESSION["user_id"] )&& isset($_SESSION["user_email"])) {
         </div>
         <ul class="menu-list">
             <li>
-                <a href="profile.php" class="menu-item">
+                <a href="profile" class="menu-item">
                     <i class="fas fa-user"></i>
                     Profile
                 </a>
