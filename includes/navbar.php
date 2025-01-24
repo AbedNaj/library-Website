@@ -48,7 +48,7 @@ if (isset($_SESSION["user_id"]) && isset($_SESSION["user_email"])) {
             <img src="./img/logo.png" alt="library"></a>
         <div class="nav-links">
             <a href="browse" class="browse">Browse</a>
-            <a href="admin" class="login">Sign Up</a>
+
 
             <?php if ($isLoged === true) :    ?>
                 <div class="profile-dropdown">

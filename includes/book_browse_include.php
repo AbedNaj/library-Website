@@ -69,8 +69,8 @@ include_once "../logic/book_available_check.php";
                         <div class="book-info">
                             <h3 class="book-title"><?php echo $allBook["book_name"]; ?></h3>
                             <p class="book-author"><?php echo $allBook["author_name"]; ?></p>
-                            <p class="book-status <?php echo $bookStatuses[$allBook["ID"]]["book state"] == "Available" ? "status-available" : "status-unavailable" ?>">   
-                                 <?php echo htmlspecialchars($bookStatuses[$allBook["ID"]]["book state"]); ?></p>
+                            <p class="book-status <?php echo $bookStatuses[$allBook["ID"]]["book state"] == "Available" ? "status-available" : "status-unavailable" ?>">
+                                <?php echo htmlspecialchars($bookStatuses[$allBook["ID"]]["book state"]); ?></p>
                         </div>
                     </div>
 
