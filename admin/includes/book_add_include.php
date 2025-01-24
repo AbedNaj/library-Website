@@ -46,7 +46,7 @@ include_once "../logic/book_add_img_Upload.php";
                         </li>
                     </a>
                     <li class="nav-item active">Books Management</li>
-                    <li class="nav-item">User Management</li>
+
                     <a href="returns">
                         <li class="nav-item">Returns</li>
                     </a>
@@ -54,9 +54,7 @@ include_once "../logic/book_add_img_Upload.php";
                         <li class="nav-item">Borrow Requests</li>
                     </a>
 
-                    <li class="nav-item">Categories</li>
-                    <li class="nav-item">Reports</li>
-                    <li class="nav-item">Settings</li>
+
                 </ul>
             </nav>
         </aside>

@@ -27,14 +27,12 @@ require_once '../logic/return_details.php';
             <ul class="nav-list">
                 <li class="nav-item" onclick="location.href='/admin'">Dashboard</li>
                 <li class="nav-item" onclick="location.href='addBook'">Books Management</li>
-                <li class="nav-item">User Management</li>
+
                 <a href="returns">
                     <li class="nav-item active">Returns</li>
                 </a>
                 <li class="nav-item" onclick="location.href='borrow-requests'">Borrow Requests</li>
-                <li class="nav-item">Categories</li>
-                <li class="nav-item">Reports</li>
-                <li class="nav-item">Settings</li>
+
             </ul>
         </div>
 

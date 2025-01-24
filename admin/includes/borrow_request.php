@@ -30,14 +30,12 @@ include("../logic/borrow_request_statistics.php");
                     <a href="addBook">
                         <li class="nav-item">Books Management</li>
                     </a>
-                    <li class="nav-item">User Management</li>
+
                     <a href="returns">
                         <li class="nav-item">Returns</li>
                     </a>
                     <li class="nav-item active">Borrow Requests</li>
-                    <li class="nav-item">Categories</li>
-                    <li class="nav-item">Reports</li>
-                    <li class="nav-item">Settings</li>
+
                 </ul>
             </nav>
         </aside>
