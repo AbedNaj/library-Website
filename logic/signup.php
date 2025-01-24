@@ -4,19 +4,19 @@ require_once __DIR__ . '/../includes/init.php';
 require_once __DIR__ . '/../includes/db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = filter_var($_POST['email'] , FILTER_SANITIZE_EMAIL); ;
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);;
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
 
 
     if (strlen($password) < 8) {
-        die("يجب أن تكون كلمة المرور أطول من 8 أحرف.");
+        die("Password must be longer than 8 characters.");
     }
     // تشفير كلمة المرور
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 
-   try {
+    try {
         // إدخال البيانات إلى قاعدة البيانات
         $stmt = $pdo->prepare("INSERT INTO users (user_email, user_name, user_password) 
                                VALUES (:email, :username, :passwords)");
@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             echo "Something went wrong. Please try again.";
         }
-
     } catch (PDOException $e) {
         if ($e->getCode() == 23000) { // 23000 is the SQLSTATE code for integrity constraint violation
             echo "this email is already used";
@@ -37,8 +36,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             error_log("Database error: " . $e->getMessage());
             die("Something went wrong. Please try again.");
         }
-
     }
-
 }
-?>

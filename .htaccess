@@ -9,5 +9,6 @@ RewriteRule  ^borrow$ pages/book_borrow.php [L]
 RewriteRule ^logout$ pages/logout.php [L]
 RewriteRule ^borrowedBooks$ pages/borrowed_books.php [L]
 RewriteRule ^profile$ pages/user_profile.php [L]
+RewriteRule ^settings$ pages/settings.php [L]
 RewriteRule  ^admin$ admin/index.php [L]
 

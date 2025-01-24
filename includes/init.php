@@ -15,12 +15,13 @@ date_default_timezone_set('Asia/Riyadh');
 
 // تهيئة الجلسة بشكل آمن
 
-if(session_status() === PHP_SESSION_NONE){
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
 
-ini_set('session.cookie_httponly', 1);
-ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 1);
+
+    ini_set('session.cookie_httponly', 1);
+    ini_set('session.use_only_cookies', 1);
+    ini_set('session.cookie_secure', 1);
+    session_start();
 }
 // تعيين إعدادات PHP
 error_reporting(E_ALL);
