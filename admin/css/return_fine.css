@@ -1,0 +1,53 @@
+.fine-details {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.fine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.fine-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fine-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.fine-value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.fine-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-top: 1px solid #eee;
+}
+
+.total-amount {
+    font-size: 1.5rem;
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.action-button.approve {
+    background-color: var(--success);
+}
+
+.action-button.approve:hover {
+    background-color: var(--success-dark);
+}

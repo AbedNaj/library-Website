@@ -14,8 +14,8 @@
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="admin-info">
-                <div class="admin-name">John Smith</div>
-                <div class="admin-role">Library Administrator</div>
+                <div class="admin-name">Library Admin</div>
+                <div class="admin-role">Dashboard</div>
             </div>
             <nav>
                 <ul class="nav-list">
@@ -25,8 +25,12 @@
                         <a href="addBook">Books Management</a>
                     </li>
                     <li class="nav-item">User Management</li>
-                    <li class="nav-item">Loans & Returns</li>
-                    <a href="borrow-requests"><li class="nav-item">borrow requests</li></a>
+                    <a href="returns">
+                        <li class="nav-item">Returns</li>
+                    </a>
+                    <a href="borrow-requests">
+                        <li class="nav-item">Borrow Requests</li>
+                    </a>
                     <li class="nav-item">Categories</li>
                     <li class="nav-item">Reports</li>
                     <li class="nav-item">Settings</li>

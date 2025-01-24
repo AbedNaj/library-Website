@@ -4,26 +4,30 @@ include_once("../logic/book_details_logic.php");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Details - Library</title>
-<link rel="stylesheet" href="./css/borrow_details.css">
+    <link rel="stylesheet" href="./css/borrow_details.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="admin-info">
-                <div class="admin-name">John Smith</div>
-                <div class="admin-role">Library Administrator</div>
+                <div class="admin-name">Library Admin</div>
+                <div class="admin-role">Borrow Details</div>
             </div>
             <nav>
                 <ul class="nav-list">
                     <li class="nav-item" onclick="location.href='/admin'">Dashboard</li>
-                    <li class="nav-item" onclick="location.href='addBook'" >Books Management</li>
+                    <li class="nav-item" onclick="location.href='addBook'">Books Management</li>
                     <li class="nav-item">User Management</li>
-                    <li class="nav-item">Loans & Returns</li>
+                    <a href="returns">
+                        <li class="nav-item">Returns</li>
+                    </a>
                     <li class="nav-item active" onclick="location.href='borrow-requests'">Borrow Requests</li>
                     <li class="nav-item">Categories</li>
                     <li class="nav-item">Reports</li>
@@ -70,7 +74,7 @@ include_once("../logic/book_details_logic.php");
                         </div>
                         <div class="detail-group">
                             <div class="detail-label">Rental Duration</div>
-                            <div class="detail-value"><?php echo htmlspecialchars($request["rent_days_count"]) . " Days "?></div>
+                            <div class="detail-value"><?php echo htmlspecialchars($request["rent_days_count"]) . " Days " ?></div>
                         </div>
                         <div class="detail-group">
                             <div class="detail-label">Return Due Date</div>
@@ -100,4 +104,5 @@ include_once("../logic/book_details_logic.php");
         </main>
     </div>
 </body>
+
 </html>

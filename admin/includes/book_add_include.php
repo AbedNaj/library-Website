@@ -15,10 +15,10 @@ include_once "../logic/book_add_img_Upload.php";
     <link rel="stylesheet" href="./css/book_add.css">
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             const closeButton = document.getElementById("close-message");
             if (closeButton) {
-                closeButton.addEventListener("click", function () {
+                closeButton.addEventListener("click", function() {
                     const messageDiv = document.getElementById("success-message");
                     messageDiv.style.display = "none";
                 });
@@ -31,8 +31,13 @@ include_once "../logic/book_add_img_Upload.php";
 
 
     <div class="container">
+
         <!-- Sidebar -->
         <aside class="sidebar">
+            <div class="admin-info">
+                <div class="admin-name">Library Admin</div>
+                <div class="admin-role">Add New Book</div>
+            </div>
             <nav>
                 <ul class="nav-list">
                     <a href="">
@@ -42,8 +47,12 @@ include_once "../logic/book_add_img_Upload.php";
                     </a>
                     <li class="nav-item active">Books Management</li>
                     <li class="nav-item">User Management</li>
-                    <li class="nav-item">Loans & Returns</li>
-                    <a href="borrow-requests"><li class="nav-item">borrow requests</li></a>
+                    <a href="returns">
+                        <li class="nav-item">Returns</li>
+                    </a>
+                    <a href="borrow-requests">
+                        <li class="nav-item">Borrow Requests</li>
+                    </a>
 
                     <li class="nav-item">Categories</li>
                     <li class="nav-item">Reports</li>

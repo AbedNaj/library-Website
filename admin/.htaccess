@@ -4,3 +4,6 @@ RewriteBase /admin
 RewriteRule ^addBook$ pages/book_add.php [L]
 RewriteRule ^borrow-requests$ pages/borrow_request.php [L]
 RewriteRule ^borrow-details$ pages/borrow_details.php [L]
+RewriteRule ^returns$ pages/returns.php [L]
+RewriteRule ^return-details$ pages/return_details.php [L]
+RewriteRule ^return-fine$ pages/return_fine.php [L]
