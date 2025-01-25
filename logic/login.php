@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // التحقق من أن الحقول غير فارغة
     if (!empty($_POST['user_email']) && !empty($_POST['user_password'])) {
         // استقبال البيانات
-        $user_email = filter_var(trim($_POST['user_email']), FILTER_SANITIZE_EMAIL); ;
+        $user_email = filter_var(trim($_POST['user_email']), FILTER_SANITIZE_EMAIL);;
         $user_password = trim($_POST['user_password']);
         try {
             $stmt = $pdo->prepare("SELECT * FROM users WHERE user_email = :user_email LIMIT 1");
@@ -33,16 +33,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         exit();
                     }
                 } else {
-                    $error = "كلمة المرور غير صحيحة";
+                    $error = "Incorrect Password";
                 }
             } else {
-                $error = "البريد الإلكتروني غير موجود";
+                $error = "Incorrect Email";
             }
         } catch (PDOException $e) {
-            $error = "حدث خطأ ما ";
+            $error = "Something Went Wrong...";
         }
     } else {
-        $error = "يرجى ملء جميع الحقول.";
+        $error = "Fill All Fields Please";
     }
 }
-?>

@@ -82,8 +82,9 @@ body {
     margin-bottom: 2rem;
 }
 
-.page-title {
-    color: #333;
+.header-actions {
+    display: flex;
+    gap: 1rem;
 }
 
 .action-button {
@@ -98,6 +99,15 @@ body {
 
 .action-button:hover {
     background-color: var(--primary-dark);
+}
+
+.logout-button {
+    background-color: red;
+    color: white;
+}
+
+.logout-button:hover {
+    background-color: darkred;
 }
 
 /* Dashboard Grid */

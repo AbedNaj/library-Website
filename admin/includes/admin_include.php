@@ -44,7 +44,10 @@ require_once './logic/admin_logic.php';
         <main class="main-content">
             <div class="header">
                 <h1 class="page-title">Dashboard</h1>
-                <a href="addBook"><button class="action-button">Add New Book</button></a>
+                <div class="header-actions">
+                    <a href="addBook"><button class="action-button">Add New Book</button></a>
+                    <a href="admin-logout"><button class="action-button logout-button">Logout</button></a>
+                </div>
             </div>
 
             <!-- Stats Grid -->
