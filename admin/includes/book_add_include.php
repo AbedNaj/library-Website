@@ -4,6 +4,16 @@ include_once "../logic/book_add_data.php";
 include_once "../logic/book_add_img_Upload.php";
 ?>
 
+<?php
+// Assuming $authors and $categories are fetched from your database earlier.
+$authorNames = array_map(function ($author) {
+    return $author['author_name'];
+}, $authors);
+
+$categoryNames = array_map(function ($category) {
+    return $category['category_name'];
+}, $categories);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,36 +98,14 @@ include_once "../logic/book_add_img_Upload.php";
                     <!-- Author -->
                     <div class="form-group">
                         <label for="author">Author *</label>
-                        <select id="author" name="author" required>
-                            <option value="">Select author</option>
-                            <?php foreach ($authors as $author): ?>
-                                <option value=" <?php echo $author['ID']; ?>">
-                                    <?php echo htmlspecialchars($author["author_name"]) ?>
-                                </option>
-
-                            <?php endforeach; ?>
-                        </select>
+                        <input type="text" id="author" name="author" required autocomplete="off">
                     </div>
-
 
                     <!-- Category -->
                     <div class="form-group">
                         <label for="category">Category *</label>
-                        <select id="category" name="category" required>
-
-
-                            <option value="">Select Category</option>
-
-                            <?php foreach ($categories as $category): ?>
-                                <option value="<?php echo $category['ID']; ?>">
-                                    <?php echo htmlspecialchars($category["category_name"]) ?>
-                                </option>
-
-                            <?php endforeach; ?>
-
-                        </select>
+                        <input type="text" id="category" name="category" required autocomplete="off">
                     </div>
-
                     <!-- Publication Year -->
                     <div class="form-group">
                         <label for="publication_year">Publication Year</label>
@@ -158,3 +146,33 @@ include_once "../logic/book_add_img_Upload.php";
 </body>
 
 </html>
+
+<!-- Include jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<script>
+    $(function() {
+        // Use PHP to output JSON arrays for autocomplete
+        var authors = <?php echo json_encode($authorNames); ?>;
+        var categories = <?php echo json_encode($categoryNames); ?>;
+
+        // Initialize autocomplete for the "author" input
+        $("#author").autocomplete({
+            source: authors,
+            minLength: 0
+        }).focus(function() {
+            // Show all suggestions on focus
+            $(this).autocomplete("search");
+        });
+
+        // Initialize autocomplete for the "category" input
+        $("#category").autocomplete({
+            source: categories,
+            minLength: 0
+        }).focus(function() {
+            $(this).autocomplete("search");
+        });
+    });
+</script>
